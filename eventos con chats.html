@@ -1,0 +1,79 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integración de Widgets</title>
+    <style>
+        /* Estilos para el contenedor principal */
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        /* Estilo para los iframes */
+        iframe {
+            border: none;
+        }
+
+        /* Contenedor para los widgets de chat */
+        #chat-container {
+            display: flex;
+            width: 100%;
+            height: 70%; /* El chat ocupa el 70% de la altura */
+        }
+
+        /* Estilo para los iframes de chat */
+        .iframe-widget {
+            width: 50%; /* Cada iframe ocupa el 50% de la anchura del contenedor */
+            height: 100%;
+        }
+
+        /* Contenedor para la actividad de Botrix */
+        #activity-container {
+            width: 100%;
+            height: 30%; /* La actividad ocupa el 30% de la altura */
+        }
+
+        /* Estilo para el iframe de actividad */
+        #botrix-activity {
+            width: 100%;
+            height: 100%; /* Ocupa toda la altura del contenedor */
+        }
+
+        /* Estilo para el iframe de alertas */
+        #botrix-alerts {
+            width: 300px;  /* Tamaño reducido en ancho */
+            height: 200px; /* Tamaño reducido en alto */
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1; /* Aparece detrás del activity feed */
+            opacity: 0.8; /* Ligera transparencia */
+        }
+    </style>
+</head>
+<body>
+    <!-- Widget de alertas de Botrix (más pequeño) -->
+    <iframe id="botrix-alerts" src="https://botrix.live/alerts?bid=hL4jXwuISOTVQTdQVTPC9A"></iframe>
+
+    <!-- Contenedor para los widgets de chat -->
+    <div id="chat-container">
+        <!-- Widget de chat de Trovo (a la izquierda) -->
+        <iframe class="iframe-widget" src="https://trovo.live/chat/Mekirs/220296856?"></iframe>
+
+        <!-- Widget de chat de Restream (a la derecha) -->
+        <iframe class="iframe-widget" src="https://chat.restream.io/chat"></iframe>
+    </div>
+
+    <!-- Contenedor para la actividad de Botrix -->
+    <div id="activity-container">
+        <!-- Widget de actividad de Botrix (abajo) -->
+        <iframe id="botrix-activity" src="https://botrix.live/widgets/activityfeed/"></iframe>
+    </div>
+</body>
+</html>
