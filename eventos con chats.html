@@ -28,30 +28,22 @@
             height: 100%;
         }
 
-        /* Chat de Trovo (ocupa aún menos espacio) */
-        #trovo-chat {
-            width: 100%;
-            height: 55%; /* Ahora ocupa solo el 55% de la pantalla */
-        }
-
-        /* Contenedor de la parte inferior */
-        #bottom-container {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            height: 45%; /* Ahora más alto */
-        }
-
-        /* Chat de Restream (más arriba en la parte inferior) */
-        #restream-chat {
-            width: 100%;
-            height: 55%; /* Ahora más alto dentro de la parte inferior */
-        }
-
-        /* Eventos de Botrix (subido más) */
+        /* Eventos de Botrix (más pequeños) */
         #botrix-activity {
             width: 100%;
-            height: 45%;
+            height: 17.5%; /* Ahora ocupa la mitad de su tamaño anterior */
+        }
+
+        /* Chat de Restream (en el medio, más grande) */
+        #restream-chat {
+            width: 100%;
+            height: 30%;
+        }
+
+        /* Chat de Trovo (al final, ocupa el resto del espacio) */
+        #trovo-chat {
+            width: 100%;
+            flex-grow: 1; /* Se expande ocupando todo el espacio restante */
         }
 
         /* Estilo para el iframe de alertas */
@@ -72,17 +64,14 @@
 
     <!-- Contenedor principal -->
     <div id="container">
-        <!-- Chat de Trovo (ahora más pequeño) -->
+        <!-- Eventos de Botrix (más pequeños) -->
+        <iframe id="botrix-activity" src="https://botrix.live/widgets/activityfeed/"></iframe>
+
+        <!-- Chat de Restream (más grande) -->
+        <iframe id="restream-chat" src="https://chat.restream.io/embed?token=be0535ac-477f-4ae3-ab9f-ba6ea4f344aa"></iframe>
+
+        <!-- Chat de Trovo (se expande para llenar el espacio restante) -->
         <iframe id="trovo-chat" src="https://trovo.live/chat/Mekirs/220296856?"></iframe>
-
-        <!-- Contenedor de la parte inferior (ahora más arriba) -->
-        <div id="bottom-container">
-            <!-- Chat de Restream (subido más) -->
-            <iframe id="restream-chat" src="https://chat.restream.io/embed?token=be0535ac-477f-4ae3-ab9f-ba6ea4f344aa"></iframe>
-
-            <!-- Eventos de Botrix (subido más) -->
-            <iframe id="botrix-activity" src="https://botrix.live/widgets/activityfeed/"></iframe>
-        </div>
     </div>
 </body>
 </html>
